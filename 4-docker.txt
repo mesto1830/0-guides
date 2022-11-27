@@ -1,0 +1,77 @@
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get update
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo systemctl status docker
+
+stop container
+sudo docker images //show all images
+sudo docker system prune //stop all images(projects)
+sudo docker rm image or container //remove docker image(project)
+
+create and run image
+create and set docker file (create outside project)
+sudo docker build --tag app1 . (run outside project) //inside project sudo docker build --tag .
+sudo docker run -p 3000:3000 app1 (first 3000 can change 4000 or 5000)
+
+//kill running docker image
+sudo docker kill or stop 9bd10f51c04a (image tag stop docker image)
+
+
+//get info
+sudo docker inspect image
+sudo docker inspect container
+
+//example hub with mongo
+sudo docker pull mongo
+sudo rm mongo1 //remove mongo1 alias to reuse the same name
+sudo docker run -v /opt/data:/data/db --name mongo1 mongo //run mongo without statless(for save localy)
+sudo docker exec -it container bash
+mongosh
+sudo docker rmi image //remote container like mongo,mysql
+
+
+//nodejs & mongodb together
+create and run nodejs image
+create and set docker file (create outside project)
+sudo docker build --tag app1 . (run outside project) //inside project sudo docker build --tag .
+sudo docker run -p 3000:3000 app1 (first 3000 can change 4000 or 5000)
+
+
+create and run mongodb image with name
+sudo docker run -v /opt/data:/data/db --name mongo-server mongo
+set mongodb link in nodejs like so mongodb://mongo-alias:27017/works
+
+and run docker run --link mongo-server:mongo-server -p 3000:3000 imagename
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
