@@ -1,13 +1,3 @@
-npm
-npm i
-npm i express --save
-npm i nodemon -g
-npm uninstall express
-npm run dev or start or json script object
-npm audit
-npm audit fix
-
-
 //close all node proccess
 pkill node
 
