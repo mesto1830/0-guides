@@ -1,35 +1,24 @@
-sudo apt-get remove docker docker-engine docker.io containerd runc
-sudo apt-get update
-sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo systemctl status docker
+//create image and run it as container
+sudo docker build -t app1 . //build image
+sudo docker run -p 3000:3000 app1 //create container
 
-stop container
-sudo docker images //show all images
-sudo docker system prune //stop all images(projects)
-sudo docker rm image or container //remove docker image(project)
+------------------------------------------------------------------------
+//stop container
+sudo docker container ls  then get id //list of container
+sudo docker container stop id -f
 
-create and run image
-create and set docker file (create outside project)
-sudo docker build --tag app1 . (run outside project) //inside project sudo docker build --tag .
-sudo docker run -p 3000:3000 app1 (first 3000 can change 4000 or 5000)
+------------------------------------------------------------------------
+//delete image
+sudo docker images  //list images
+sudo docker rmi imageid -f //delete image
 
-//kill running docker image
-sudo docker kill or stop 9bd10f51c04a (image tag stop docker image)
-
-
-//get info
+------------------------------------------------------------------------
+//inspect
 sudo docker inspect image
 sudo docker inspect container
 
-//example hub with mongo
+------------------------------------------------------------------------
+//hubs
 sudo docker pull mongo
 sudo rm mongo1 //remove mongo1 alias to reuse the same name
 sudo docker run -v /opt/data:/data/db --name mongo1 mongo //run mongo without statless(for save localy)
