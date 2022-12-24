@@ -1,8 +1,0 @@
-//close all node proccess
-sudo pkill node
-
-//close specific proccess
-sudo lsof -i :3000
-sudo kill -9 pid
-
-sudo npm cache clean --force
