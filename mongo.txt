@@ -13,15 +13,23 @@ db.createUser(
   }
 )
 
------------------auth after connection
+auth after connection
+-------------------------------------------------------
 use user
 db.auth("user", passwordPrompt()) or 
 db.auth('mesto','9090')
 
------------------auth during connection
+auth during connection
+-------------------------------------------------------
 mongosh -u user -p
 
-//if mongo not connect then 
+---------------------------------------------------------
+Remove MongoDB databases and log files.
+sudo rm -r /var/log/mongodb
+sudo rm -r /var/lib/mongodb
+
+------------------------------------------------------
+errors
 rm /tmp/mongodb-27017.sock
 sudo service mongod start
 or
@@ -36,10 +44,14 @@ mongorestore
 mongodump --db=gasvet //only one db
 mongorestore --verbose ./dump
 
+-------------------------------------------------------------
+database
 show databases;
 use works;
 db.dropDatabase;
 
+-------------------------------------------------------------
+collections
 show collections;
 db.createCollection('users');
 db.users.drop();
