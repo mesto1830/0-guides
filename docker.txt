@@ -24,11 +24,20 @@ sudo docker inspect image
 sudo docker inspect container
 
 ------------------------------------------------------------------------
+docker hub mongo
+sudo docker pull mongo //install mongo
+sudo docker run -d -p 27017:27017 -v data:/data/db mongo
+sudo docker ps
+sudo docker container stop id
 
+------------------------------------------------------------------------
 
-
-
-
+sudo docker pull mysql
+sudo docker run -d --name mysql-server -p 3306:3306 -e "MYSQL_ROOT_PASSWORD=9090" mysql
+sudo mkdir /var/lib/mysql -p
+docker run -d --name mysql-server -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e "MYSQL_ROOT_PASSWORD=9090" mysql
+sudo docker ps
+sudo docker container stop id
 
 
 

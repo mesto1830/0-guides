@@ -1,3 +1,6 @@
+install mongo //go to document
+-----------------------------------------------
+create user
 sudo nano /etc/mongod.conf
 security:
   authorization: enabled
@@ -36,28 +39,6 @@ db.auth('mesto','9090')
 auth during connection
 mongosh -u user -p
 
----------------------------------------------------------
-Remove MongoDB databases and log files.
-sudo rm -r /var/log/mongodb
-sudo rm -r /var/lib/mongodb
-
-------------------------------------------------------
-errors
-rm /tmp/mongodb-27017.sock
-sudo service mongod start
-or
-sudo lsof -i -P -n | grep 27017
-sudo kill pd
-
-pgrep mongo
-sudo kill pid
-
-mongotop //monitoring
-mongodump //backup
-mongorestore
-mongodump --db=gasvet //only one db
-mongorestore --verbose ./dump
-
 -------------------------------------------------------------
 database
 show databases;
@@ -87,5 +68,32 @@ db.users.deleteOne({name:'test1'});
 db.users.deleteMany({salery:3000});
 db.users.updateOne({name:"Deniz"},{$pull:{language: 'Javascript'}})//delete array
 
+---------------------------------------------------------
+Remove MongoDB databases and log files.
+sudo rm -r /var/log/mongodb
+sudo rm -r /var/lib/mongodb
 
+------------------------------------------------------
+errors
 connection failed = rm /tmp/mongodb-27017.sock
+sudo service mongod start
+or
+sudo lsof -i -P -n | grep 27017
+sudo kill pd
+
+pgrep mongo
+sudo kill pid
+
+mongotop //monitoring
+mongodump //backup
+mongorestore
+mongodump --db=gasvet //only one db
+mongorestore --verbose ./dump
+
+----------------------------------------------------------------------------
+uninstall
+sudo apt-get purge mongodb-org*
+sudo apt-get autoremove
+check uninstall
+sudo ls /var/log/mongodb
+sudo ls /var/lib/mongodb
