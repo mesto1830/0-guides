@@ -1,6 +1,6 @@
 install mongo //go to document
 -----------------------------------------------
-create user
+create user and role
 sudo nano /etc/mongod.conf
 security:
   authorization: enabled
@@ -12,20 +12,18 @@ db.createUser(
   {
     user: 'mesto',
     pwd:  '9090',
-    roles: [ { role: "readWrite", db: "gasvet" }] 
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, 'readWriteAnyDatabase'] 
   }
 )
 -----------------------------------------------------------
-with extra role
-use admin
+with extra user
+use gasvet
 db.createUser(
   {
-    user: 'mesto',
+    user: 'gasvet',
     pwd:  '9090',
-    roles: {role:"userAdminAnyDatabase", db:"admin"},
-	   {role:"clusterMonitor", db:"admin"},
-	   {role:"readAnyDatabase", db:"admin"},
-	   {role:"read", db:"config"} 
+    roles: [{role:"readWrite", db:"gasvet"}]
+	
   }
 )
 
