@@ -30,6 +30,11 @@ db.createUser(
 -----------------------------------------------------------
 update user change current role or add new role
 use db
+db.updateUser('crud',{
+    pwd: '123'
+	
+  }
+)
 db.updateUser('gasvet',{
     roles: [
     	{role:"readWrite", db:"gasvet"},
@@ -55,7 +60,14 @@ show databases;
 use works;
 db.dropDatabase;
 db.stats();
-mongodump --db=gasvet //only one db
+
+sudo mongodump --db=gasvet --authenticationDatabase admin --username 'user' --password 'password'
+mongodump --db=gasvet //backup only one db
+mongodump --db=gasvet --out fulldump
+tree fulldump //check backup tree
+
+mongodump --db=gasvet --collection users --out usersdump
+mongodump --db=gasvet --excludeCollection=users --out excludeusersdump
 mongorestore --verbose ./dump
 
 -------------------------------------------------------------
