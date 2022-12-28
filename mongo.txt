@@ -8,7 +8,7 @@ security:
 sudo systemctl restart mongod
 
 use admin
-root
+//root role
 use db //root role is top of roles
 db.createUser(
   {
@@ -18,7 +18,7 @@ db.createUser(
 	
   }
 )
-//super admin
+//super admin role
 db.createUser(
   {
     user: 'mesto',
