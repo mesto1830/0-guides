@@ -31,9 +31,9 @@ with extra user
 use db
 db.createUser(
   {
-    user: 'gasvet',
+    user: 'works',
     pwd:  '9090',
-    roles: [{role:"readWrite", db:"gasvet"}]
+    roles: [{role:"readWrite", db:"works"}]
 	
   }
 )
@@ -95,14 +95,15 @@ db.stats();
 //backup exclude collection
   mongodump --db=gasvet --excludeCollection=users --out excludeusersdump -authenticationDatabase admin --username 'user' --password 'password'
 
-
-tree fulldump //check backup tree
-
 -------------------------------------------------------------
 collections
 show collections;
 db.createCollection('users');
 db.users.drop();
+db.users.createIndex({name:1})
+db.users.getIndexes()
+db.collection.dropIndexes()
+db.collection.dropIndexe({name:1})
 
 db.users.insertOne({name:'test1',pass:'123'})
 db.users.insertOne({name:'test1',pass:'123',language:['Javascript','Mongodb']})
@@ -122,9 +123,11 @@ db.users.updateOne({name:"Deniz"},{$pull:{language: 'Javascript'}})//delete arra
 
 ------------------------------------------------------------
 //monitoring
-mongotop 
-
-
+mongotop //track spend time
+mongostat // track queries
+sudo mongosh -u user -p
+db.serverStatus()
+db.serverStatus().mem
 ------------------------------------------------------
 errors
 connection failed = rm /tmp/mongodb-27017.sock

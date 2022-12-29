@@ -1,30 +1,3 @@
-lsof -i TCP:3306
-kill -9 pid
-
-sudo netstat -nlpt |grep 3306
-sudo service mysql stop
-
-some errors------------------------------------------------------------------
-systemctl unmask mysql.service
-systemctl status mysql.service
-sudo mysql_secure_installation
-sudo systemctl restart mysql
-
-restore cache when you delete all-------------------------------------------
-sudo mkdir -p /var/cache/apt/archives/partial
-sudo touch /var/cache/apt/archives/lock
-sudo chmod 640 /var/cache/apt/archives/lock
-
-Uninstall mysql--------------------------------------------------------------
-sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
-sudo apt-get remove --purge *mysql\*
-sudo apt-get autoremove -y
-sudo apt-get autoclean
-sudo rm -r /etc/mysql
-sudo rm -r /var/lib/mysql
-sudo rm -r /var/lib/mysql-files
-sudo rm -r /var/lib/mysql-keyring
-
 install mysql as root--------------------------------------------------------------
 sudo apt update
 sudo apt install mysql-server
@@ -51,9 +24,10 @@ FLUSH PRIVILEGES;
 
 REVOKE ALL PRIVILEGES ON testdb.* FROM 'testuser'@'localhost';
 
+sudo yum install mysqltuner
+sudo mysqltuner
 -----------------------------------------------------------------------------
 mysqlcheck -u root -p --auto-repair --optimize --all-databases
-
 mysql -u root -p
 mysqldump -p db > db.sql --- backup
 mysql -u root -p db < db.sql --- restore
@@ -100,10 +74,25 @@ SHOW VARIABLES LIKE "max_connections";
 SHOW TABLES;
 DESCRIBE  users;
 
+Uninstall mysql--------------------------------------------------------------
+sudo apt-get remove --purge mysql-server mysql-client mysql-common -y
+sudo apt-get remove --purge *mysql\*
+sudo apt-get autoremove -y
+sudo apt-get autoclean
+sudo rm -r /etc/mysql
+sudo rm -r /var/lib/mysql
+sudo rm -r /var/lib/mysql-files
+sudo rm -r /var/lib/mysql-keyring
 
-sudo yum install mysqltuner
-sudo mysqltuner
+some errors------------------------------------------------------------------
+systemctl unmask mysql.service
+systemctl status mysql.service
+sudo mysql_secure_installation
+sudo systemctl restart mysql
 
-
+restore cache when you delete all-------------------------------------------
+sudo mkdir -p /var/cache/apt/archives/partial
+sudo touch /var/cache/apt/archives/lock
+sudo chmod 640 /var/cache/apt/archives/lock
 
 
