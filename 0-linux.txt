@@ -1,6 +1,18 @@
-//show running proccess
+//show running proccess and port
 sudo netstat -nptl
 -------------------------------------------------------
-sudo netstat -nlpt |grep 3306
+sudo netstat -nlpt | grep 3306
 lsof -i TCP:3306
 kill -9 pid
+
+sudo ps aux | grap nginx //cpu usage for nginx
+top //cpu usage for all
+
+uname -a or -v or -r //kernel info
+ifconfig             //ip info
+df -ah               //disk info
+
+service mysql status or stop or start or restart //service manage
+systemctl status mysql or stop or start or restart //service manage new version
+
+du -sh directory-name //size of directory
