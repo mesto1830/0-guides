@@ -31,9 +31,9 @@ with extra user
 use db
 db.createUser(
   {
-    user: 'works',
+    user: 'betadmin',
     pwd:  '9090',
-    roles: [{role:"readWrite", db:"works"}]
+    roles: [{role:"readWrite", db:"bet"}]
 	
   }
 )
@@ -48,12 +48,15 @@ db.updateUser('crud',{
 )
 db.updateUser('gasvet',{
     roles: [
-    	{role:"readWrite", db:"gasvet"},
+    	{role:"readWrite", db:"bet"},
     	{role:"readWrite", db:"crud"}
     ]
 	
   }
 )
+
+use db
+db.dropUser('user')
 ---------------------------------------
 auth after connection
 sudo mongosh -u user -p
@@ -130,7 +133,7 @@ db.serverStatus()
 db.serverStatus().mem
 ------------------------------------------------------
 errors
-connection failed = rm /tmp/mongodb-27017.sock
+connection failed = sudo rm /tmp/mongodb-27017.sock
 sudo service mongod start
 or
 sudo lsof -i -P -n | grep 27017

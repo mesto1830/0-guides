@@ -1,0 +1,32 @@
+create directory--------------------------------
+mkdir name
+
+remove directory--------------------------------
+sudo rm -r name
+
+move directory----------------------------------
+sudo mv name path
+
+copy directory----------------------------------
+sudo cp name path
+
+FILES------------------------------------------
+crreate file--------------------------------
+touch name.txt
+
+remove file--------------------------------
+sudo rm -r name
+
+move file----------------------------------
+sudo mv name path
+
+copy file----------------------------------
+sudo cp name path
+
+show inside file----------------------------
+sudo cat filename
+
+size of directory--------------------------------
+du -sh name //size of directory
+
+

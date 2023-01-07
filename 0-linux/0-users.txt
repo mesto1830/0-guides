@@ -1,0 +1,35 @@
+show user list------------------------------------------
+sudo cat /etc/passwd
+
+//user config
+show user id--------------------------------------------
+sudo id or sudo id username 
+
+show user config in login file---------------------------
+sudo nano /etc/login.defs  
+
+change password----------------------------------------
+sudo passwd
+
+create user--------------------------------------------
+useradd username
+
+add password for createde new user---------------------
+sudo passwd username
+
+switch to new user-------------------------------------
+su username
+
+permission for new user--------------------------------
+su root 
+nano /etc/sudoers then add below
+user_name ALL=(ALL)  ALL
+
+or simple way withouth adding to file like above
+sudo usermod -a -G sudo username
+
+
+delete user with proccess-------------------------------
+killall -TERM -u username
+userdel -f username
+
