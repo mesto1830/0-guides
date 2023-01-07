@@ -1,3 +1,6 @@
+current user-------------------------------------------
+whoami
+
 show user list------------------------------------------
 sudo cat /etc/passwd
 

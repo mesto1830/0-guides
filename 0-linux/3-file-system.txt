@@ -1,3 +1,11 @@
+/bin contain executable files
+/etc contain system configration files
+/opt contain third party app files
+
+
+file and directory list-------------------------
+sudo ld -l or ls -al
+
 create directory--------------------------------
 mkdir name
 

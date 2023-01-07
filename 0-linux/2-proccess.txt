@@ -1,6 +1,5 @@
 //show running proccess and port
 sudo netstat -nptl
-
 -------------------------------------------------------
 sudo netstat -nlpt | grep 3306
 lsof -i TCP:3306
