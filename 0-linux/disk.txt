@@ -1,0 +1,2 @@
+fdisk -l
+fdisk -l | grep 'Disk /dev'
