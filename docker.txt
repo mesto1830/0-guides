@@ -38,24 +38,3 @@ sudo mkdir /var/lib/mysql -p
 docker run -d --name mysql-server -p 3306:3306 -v /var/lib/mysql:/var/lib/mysql -e "MYSQL_ROOT_PASSWORD=9090" mysql
 sudo docker ps
 sudo docker container stop id
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

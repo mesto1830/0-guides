@@ -2,6 +2,8 @@
 /etc contain system configration files
 /opt contain third party app files
 
+help----------------------------------------
+ls --help
 
 file and directory list-------------------------
 sudo ld -l or ls -al
@@ -31,10 +33,24 @@ sudo mv name path
 copy file----------------------------------
 sudo cp name path
 
+rename-------------------------------------
+mv name newname
+
 show inside file----------------------------
 sudo cat filename
 
 size of directory--------------------------------
 du -sh name //size of directory
 
-
+example---------------------
+ls r ls -ls or ls -a r ls -s or ls -n
+mkdir test
+touch test.txt
+rm -r test
+rm test.txt
+mv test newpath
+cp test newpath
+cat test.txt
+head test.txt
+tail test.txt
+cal or cal 1999

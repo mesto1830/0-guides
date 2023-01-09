@@ -5,13 +5,19 @@ sudo netstat -nlpt | grep 3306
 lsof -i TCP:3306
 kill -9 pid
 
+//cpu info---------------------------------------------
+sudo cat /proc/cpuinfo
+
+//proccess info---------------------------------------
 sudo ps aux | grap nginx //cpu usage for nginx
 top //cpu usage for all
 
+..ip info----------------------------------------------
 uname -a or -v or -r //kernel info
 ifconfig             //ip info
 df -ah               //disk info
 
+//service info------------------------------------------
 service mysql status or stop or start or restart //service manage
 systemctl status mysql or stop or start or restart //service manage new version
 

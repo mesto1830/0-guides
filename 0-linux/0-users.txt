@@ -15,13 +15,13 @@ change password----------------------------------------
 sudo passwd
 
 create user--------------------------------------------
-useradd username
+adduser username
 
 add password for createde new user---------------------
 sudo passwd username
 
 switch to new user-------------------------------------
-su username
+su - username
 
 permission for new user--------------------------------
 su root 
