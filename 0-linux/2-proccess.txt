@@ -1,9 +1,15 @@
 //show running proccess and port
-sudo netstat -nptl
+sudo netstat -nptl or 
+ps aux
+
+which mongod //return exec path
+whereis mongod //return all path
 -------------------------------------------------------
+sudo pgrep mongod or
 sudo netstat -nlpt | grep 3306
 lsof -i TCP:3306
-kill -9 pid
+kill -9 pid or
+killall mongod
 
 //cpu info---------------------------------------------
 sudo cat /proc/cpuinfo

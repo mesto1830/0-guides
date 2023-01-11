@@ -1,0 +1,9 @@
+string search------------------------------------
+grep 'string' filename
+grep -i 'string' filename //not case sensitive
+grep -i 'string' ./* //search everywhere
+grep -n -i 'date' ./* //search everywhere with line number
+
+
+search proccess----------------------------------------
+sudo pgrep mongod

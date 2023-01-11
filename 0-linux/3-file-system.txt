@@ -53,12 +53,7 @@ cp test newpath
 cat test.txt
 head test.txt //start of file
 tail test.txt //end of file
-cal or cal 1999 //calendar
 
-
-string search------------------------------------
-grep string filename
-grep -i string filename //not case sensitive
 
 
 

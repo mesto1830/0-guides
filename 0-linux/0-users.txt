@@ -23,8 +23,9 @@ sudo usermod -a -G groupname username //change group for for existing user
 add password for createde new user---------------------
 sudo passwd username
 
-switch to new user-------------------------------------
+switch to user-------------------------------------
 su - username
+sudo -i //switch to root
 
 permission for new user--------------------------------
 show permission for current user------------------
