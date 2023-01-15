@@ -12,6 +12,7 @@ sudo service ssh stop
 
 //Allow SSH in Firewall------------------------------------
 sudo ufw allow port /tcp
+sudo ufw deny port /tcp
 sudo ufw reload
 sudo ufw status
 

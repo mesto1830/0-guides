@@ -49,6 +49,17 @@ change group of file and folder-------------------
 chgrp groupname filename
 chgrp groupname directory
 
+//change file owner----------------------------
+sudo chown ownername test.txt
+
+//change file group----------------------------
+sudo chgrp groupname test.txt
+
+//exec permission-----------------------------
+chmod u+x filename.sh //user
+chmod g+x filename.sh //group
+chmod o+x filename.sh //other
+
 delete user with proccess-------------------------------
 killall -TERM -u username
 userdel -f username
